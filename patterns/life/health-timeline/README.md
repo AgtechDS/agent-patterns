@@ -1,41 +1,60 @@
-# Health Timeline
+# 🏥 Health Timeline
 
-Un pattern LLM per centralizzare la tua storia medica. Il tuo agente estrae dati da referti, monitora trend, prepara i briefing per le visite e non dimentica mai una scadenza.
+Un pattern LLM per centralizzare la tua storia medica. Ogni referto diventa dati strutturati. Ogni visita ha un brief preparato. Ogni valore di laboratorio viene confrontato con i precedenti.
 
 ## Il problema
 
-Referti in PDF sparsi, farmaci di cui non ricordi il dosaggio, sintomi che non hai mai collegato, analisi del sangue di 2 anni fa che nessuno ha mai confrontato. Dal dottore non hai mai una timeline completa.
+Le tue informazioni mediche sono frammentate: referti in PDF sparsi, farmaci di cui non ricordi il dosaggio, sintomi che non hai mai collegato. Dal dottore non hai mai una timeline completa. Nessun tool mantiene una storia medica coerente e aggiornata per te.
 
 ## La soluzione
 
-Un wiki medico persistente che il LLM mantiene aggiornato. Ogni referto diventa dati strutturati. Ogni visita ha un brief preparato. Ogni valore di laboratorio viene confrontato con i precedenti.
+Un wiki medico persistente che il LLM mantiene aggiornato. Ogni referto viene analizzato e strutturato, ogni farmaco tracciato, ogni valore di laboratorio confrontato con lo storico. Il LLM prepara i briefing per le visite e segnala trend, gap e anomalie.
+
+## Architettura
 
 ```
-raw/                     ← referti PDF, foto, note sintomi (li metti tu)
-wiki/
-  ├── index.md           ← profilo sintetico: condizioni, farmaci, allergie
-  ├── timeline.md        ← cronologia completa: eventi, visite, esami
-  ├── conditions/        ← una pagina per condizione (diagnosi, evoluzione)
-  ├── medications.md     ← farmaci attuali e passati con dosaggi
-  ├── lab-results.md     ← storico esami con trend e anomalie
-  ├── questions.md       ← domande accumulate per il prossimo medico
-  ├── prep/              ← briefing generati per ogni visita
-  └── gaps.md            ← screening in scadenza, esami dimenticati
+.health/
+├── index.md              ← catalogo: condizioni, farmaci, visite
+├── log.md                ← timeline cronologica eventi medici
+├── timeline.md           ← narrazione cronologica della salute
+├── conditions/           ← una pagina per condizione
+├── medications.md        ← farmaci attuali e passati, dosaggi, interazioni
+├── visits/               ← una pagina per visita medica
+├── labs/                 ← risultati analisi con trend
+├── questions.md          ← domande da fare al prossimo medico
+└── patterns.md           ← correlazioni e osservazioni
 ```
 
 ## Operazioni
 
-| Comando | Descrizione |
-|---------|-------------|
-| `ht ingest` | Estrai dati da un referto: valori, diagnosi, prescrizioni |
-| `ht prep` | Prepara il brief per una visita specialistica |
-| `ht review` | Confronta gli ultimi esami con i precedenti, segnala trend |
-| `ht lint` | Cerca gap: screening in ritardo, farmaci non rivisti, sintomi isolati |
-| `ht timeline` | Mostra la cronologia completa di un periodo o condizione |
-| `ht init` | Crea la struttura `health-timeline/` |
+| Comando | Cosa fa | Output |
+|---------|---------|--------|
+| `health ingest` | Aggiungi referto/analisi/visita — estrae dati, aggiorna timeline | Pagine aggiornate, anomalie segnalate |
+| `health prep` | Prepara brief per una visita medica specifica | File pre-visita con storia, farmaci, domande |
+| `health track` | Registra un sintomo o un farmaco | Entry in log + aggiornamento pagina |
+| `health review` | Revisione periodica: farmaci attivi, visite mancanti, analisi scadute | Report con raccomandazioni |
+| `health query` | Cerca nella storia medica | Risposta con citazioni alle fonti |
+| `health lint` | Trova interazioni farmaci, valori anomali, gap temporali | Report gap e anomalie |
 
-## Perché funziona
+## Quick Start
 
-Il problema medico è universale ma nessun tool lo risolve in modo semplice. O hai un' app per farmaci, una per referti, una per sintomi — mai tutto insieme. Il LLM diventa il tuo **centralizzatore medico** che vede il quadro completo.
+1. Copia `SCHEMA.md` nel tuo agent
+2. Digita `health init` per creare `.health/` e la struttura
+3. Inizia con `health ingest` — carica un referto e lascia che il LLM lo strutturi
 
-Vedi [SCHEMA.md](SCHEMA.md) per il prompt completo da incollare nel tuo agent.
+## Philosophy
+
+- **Il LLM non fa diagnosi** — estrae, organizza, confronta, segnala. Mai dire "hai X".
+- **Dati locali e privati** — tutto rimane in file Markdown. Nessun dato inviato a servizi esterni.
+- **Trend, non snapshot** — un valore fuori range è un dato. Un trend su 3 misurazioni è un segnale.
+- **Tracciabilità** — ogni valore ha data e fonte. Mai dati senza referto.
+
+## Cosa NON è
+
+- **Non è un medical record** — non sostituisce il fascicolo sanitario elettronico. È un companion personale.
+- **Non è un diagnostic tool** — non interpreta sintomi. Non suggerisce cure.
+- **Non è un'app medica** — non ha API, non si integra con SSN. Funziona con ciò che l'utente carica.
+
+---
+
+Part of [agent-patterns](https://github.com/AgtechDS/agent-patterns) · MIT
