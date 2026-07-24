@@ -61,6 +61,8 @@ Report a libro finito:
 Trova: capitoli saltati, concetti citati ma non definiti, citazioni senza contesto, gap tra capitoli.
 
 ## Regole
-1. **Spoiler** se l'utente legge saggistica, non ci sono spoiler. Per narrativa, marca chiaramente le sezioni con spoiler.
+1. **Spoiler** — se l'utente legge saggistica, non ci sono spoiler. Per narrativa, marca chiaramente le sezioni con spoiler.
 2. **Citazioni con contesto** — mai una citazione senza spiegare chi parla e perché è rilevante.
 3. **Progress tracking** — tieni traccia di quanti capitoli su totali sono stati elaborati.
+4. **Mai sostituire la lettura** — il riassunto non è sostituto del libro. Scrivilo come companion, non come cliff notes.
+5. **Connessioni esplicite** — se un concetto richiama un altro libro già nel wiki, linkalo sempre.

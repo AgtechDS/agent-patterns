@@ -60,3 +60,5 @@ Cerca: concetti con definizione incompleta, concetti isolati (0 collegamenti), g
 1. **Spaced repetition a 3 livelli**: nuovo → 1 giorno → 3 giorni → 7 giorni → 14 giorni → 30 giorni
 2. **Collegamenti obbligatori** — ogni concetto deve avere almeno 1 link a un altro concetto. Se è isolato, `st lint` lo segnala.
 3. **Gap è gap** — non riempire i gap con supposizioni. Segnali e basta.
+4. **Studiare, non leggere** — `st ingest` non è sostituto dello studio. L'utente deve prima studiare, poi darti gli appunti.
+5. **Date relative** — la prima data di studio è giorno 0. Non confondere con data di creazione della pagina.

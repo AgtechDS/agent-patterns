@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-24",
+  "repo": "user/agent-patterns",
+  "branch": "main",
+  "commits": 5,
+  "issues": {
+    "open": 3,
+    "stale": 1
+  },
+  "prs": {
+    "open": 1,
+    "abandoned": 0
+  },
+  "dependencies": {
+    "outdated": 0,
+    "vulnerabilities": 0
+  }
+}
