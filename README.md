@@ -15,7 +15,7 @@ Catalogo di pattern LLM-ready per agent AI: prompt strutturati, schemi e workflo
 | Reading Companion | Knowledge | 🔜 |
 | Decision Journal | Life | ✅ Pronto |
 | Health Timeline | Life | ✅ Pronto |
-| Personal CRM | Life | 🔜 |
+| Personal CRM | Life | ✅ Pronto |
 | Life Admin | Life | 🔜 |
 | Finance Narrator | Life | 🔜 |
 | Meeting Memory | Work | 🔜 |
