@@ -7,20 +7,20 @@ Catalogo di pattern LLM-ready per agent AI: prompt strutturati, schemi e workflo
 | Pattern | Categoria | Stato |
 |---------|-----------|-------|
 | GitHub Gardener | Dev | ✅ Pronto |
-| Debug Diary | Dev | 🔜 |
-| Dotfiles Curator | Dev | 🔜 |
-| Server Sentinel | Dev | 🔜 |
-| LLM Wiki | Knowledge | 🔜 |
-| Study Companion | Knowledge | 🔜 |
-| Reading Companion | Knowledge | 🔜 |
+| Debug Diary | Dev | ✅ Pronto |
+| Dotfiles Curator | Dev | ✅ Pronto |
+| Server Sentinel | Dev | ✅ Pronto |
+| LLM Wiki | Knowledge | ✅ Pronto |
+| Study Companion | Knowledge | ✅ Pronto |
+| Reading Companion | Knowledge | ✅ Pronto |
 | Decision Journal | Life | ✅ Pronto |
 | Health Timeline | Life | ✅ Pronto |
 | Personal CRM | Life | ✅ Pronto |
-| Life Admin | Life | 🔜 |
-| Finance Narrator | Life | 🔜 |
-| Meeting Memory | Work | 🔜 |
-| Project Postmortem | Work | 🔜 |
-| World Bible | Creative | 🔜 |
+| Life Admin | Life | ✅ Pronto |
+| Finance Narrator | Life | ✅ Pronto |
+| Meeting Memory | Work | ✅ Pronto |
+| Project Postmortem | Work | ✅ Pronto |
+| World Bible | Creative | ✅ Pronto |
 
 ## Licenza
 
