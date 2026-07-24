@@ -1,36 +1,60 @@
-# World Bible
+# 🌍 World Bible
 
-Un pattern LLM per mantenere coerenza in mondi narrativi. Il tuo agente è il continuity editor del tuo romanzo, gioco, fumetto o campagna D&D.
+Un pattern LLM per mantenere coerenza in mondi narrativi. Ogni personaggio, luogo, evento e regola ha una pagina wiki sincronizzata col testo.
 
 ## Il problema
 
-Scrivi un romanzo: dopo 50 pagine non ricordi il colore degli occhi del personaggio secondario del capitolo 3. La timeline ha buchi. La geografia è contraddittoria. La magia ha regole che cambi senza accorgertene.
+Scrivi un romanzo, un gioco, una campagna D&D. Dopo 50 pagine non ricordi il colore degli occhi del personaggio secondario del capitolo 3. La timeline ha buchi. Le regole della magia cambiano senza accorgertene. I co-autori non hanno una fonte unica di verità. La continuità narrativa si perde.
 
 ## La soluzione
 
-Un wiki del tuo mondo narrativo: personaggi, luoghi, timeline, regole. Ogni capitolo aggiorna il wiki. Il LLM segnala ogni incoerenza prima che arrivi al lettore.
+Un wiki del mondo narrativo che il LLM mantiene aggiornato a ogni capitolo. Personaggi, luoghi, timeline, regole — tutto sincronizzato. Il LLM segnala ogni incoerenza prima che arrivi al lettore.
+
+## Architettura
 
 ```
-wiki/
-  ├── index.md           ← mappa del mondo: tutto a colpo d'occhio
-  ├── characters/        ← una pagina per personaggio
-  ├── locations/         ← luoghi con descrizioni e mappe testuali
-  ├── timeline.md        ← cronologia eventi della storia
-  ├── rules.md           ← regole del mondo (magia, tecnologia, società)
-  ├── factions.md        ← organizzazioni e gruppi
-  ├── lore.md            ← mitologia, storia antica, leggende
-  └── consistency.md     ← contraddizioni trovate e risolte
+.world/
+├── index.md              ← catalogo: personaggi, luoghi, eventi
+├── log.md                ← timeline di scrittura
+├── characters/           ← scheda per personaggio
+├── locations/            ← luoghi con descrizioni e mappe testuali
+├── timeline.md           ← cronologia eventi della storia
+├── rules.md              ← regole del mondo (magia, tecnologia, società)
+├── glossary.md           ← termini inventati, nomi, lingue
+├── consistency.md        ← contraddizioni rilevate e risolte
+└── style.md              ← tono, voce narrante, regole di scrittura
 ```
 
 ## Operazioni
 
-| Comando | Descrizione |
-|---------|-------------|
-| `wb ingest` | Carica capitolo/brano — aggiorna personaggi, luoghi, timeline |
-| `wb check` | Verifica coerenza: contraddizioni con il resto del mondo |
-| `wb profile` | "Chi è X?" — scheda completa da tutte le menzioni |
-| `wb timeline` | Mostra timeline eventi con filtri |
-| `wb brainstorm` | Genera idee coerenti con il mondo esistente |
-| `wb lint` | Trova buchi di trama, personaggi dimenticati, regole violate |
+| Comando | Cosa fa | Output |
+|---------|---------|--------|
+| `world ingest` | Carica capitolo/brano — aggiorna personaggi, luoghi, timeline | Pagine aggiornate |
+| `world check` | Verifica coerenza del capitolo con tutto il wiki | Report contraddizioni |
+| `world query` | "Chi è X? Di che colore ha gli occhi Y?" | Scheda dal wiki |
+| `world brainstorm` | "Come potrebbe evolvere X dato Y?" | Idee coerenti col mondo |
+| `world lint` | Personaggi mai più menzionati, timeline gap, regole violate | Report gap |
+| `world export` | Genera la bibbia completa del mondo | File unico riassuntivo |
 
-Vedi [SCHEMA.md](SCHEMA.md) per il prompt completo.
+## Quick Start
+
+1. Copia `SCHEMA.md` nel tuo agent
+2. Digita `world init` per creare `.world/`
+3. Inizia con `world ingest` — carica il primo capitolo
+
+## Philosophy
+
+- **L'autore scrive, il LLM protegge** — non sostituisci la creatività. Mantieni la coerenza.
+- **Ogni contraddizione è un'opportunità** — segnalata, non giudicata. A volte l'incoerenza è intenzionale (narratore inaffidabile).
+- **Il glossario è legge** — nomi, luoghi, termini hanno una sola definizione. Tutto il resto vi si riferisce.
+- **Append-only per timeline** — la cronologia non si modifica. Se scopri un errore, aggiungi una nota.
+
+## Cosa NON è
+
+- **Non è un generatore di storie** — non scrive capitoli, non crea trame. Mantiene ciò che l'autore crea.
+- **Non è un editor** — non migliora la prosa, non corregge grammatica. Solo coerenza interna.
+- **Non è un wiki generico** — è specializzato per mondi narrativi. Personaggi, archi, regole, glossario.
+
+---
+
+Part of [agent-patterns](https://github.com/AgtechDS/agent-patterns) · MIT
