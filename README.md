@@ -5,6 +5,19 @@
 [![GitHub](https://img.shields.io/badge/patterns-15-blue)](https://github.com/AgtechDS/agent-patterns)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
+## Stato
+
+| Categoria | Pronti | Totale |
+|-----------|--------|--------|
+| Dev | 4 | 4 |
+| Knowledge | 3 | 3 |
+| Life | 5 | 5 |
+| Work | 2 | 2 |
+| Creative | 1 | 1 |
+| **Totale** | **15** | **15** |
+
+Ultimo aggiornamento SCHEMA: **Decision Journal v1.1** (meta-cognizione, modalità fallback).
+
 ## Cos'è
 
 Ogni pattern è un kit istantaneo: **README** (cosa fa, perché serve) + **SCHEMA.md** (prompt da copiare nell'agente) + **esempi** di wiki già popolato. Incolli lo SCHEMA, l'agente si specializza.
@@ -83,6 +96,21 @@ patterns/CATEGORIA/NOME/
 - **Knowledge workers** che accumulano informazioni e vogliono un secondo cervello persistente
 - **Scrittori e creativi** che devono mantenere coerenza nei mondi narrativi
 - **Chiunque** abbia un problema di organizzazione che un LLM può risolvere
+
+## Roadmap
+
+- [x] V1.0 — 15 pattern pubblicati, repo strutturata
+- [x] V1.1 — Decision Journal: meta-cognizione + modalità fallback
+- [ ] V1.2 — Health Timeline: upgrade meta-cognizione
+- [ ] V1.3 — Aggiunta `evals/` per test di regressione su ogni pattern
+- [ ] V1.4 — Guida per contribuire (`CONTRIBUTING.md`)
+
+## Changelog
+
+| Versione | Data | Modifiche |
+|----------|------|-----------|
+| v1.1 | 2026-07-24 | Decision Journal: 3 campi meta-cognitivi (Tipo, Stato emotivo, Confidenza), modalità fallback, lint potenziato |
+| v1.0 | 2026-07-24 | Release iniziale: 15 pattern completi |
 
 ## Licenza
 
