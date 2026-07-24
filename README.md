@@ -1,117 +1,109 @@
 # agent-patterns
 
-**Pattern LLM-ready per agent AI** — prompt strutturati, schemi e workflow pronti per Claude Code, OpenCode, Codex e qualsiasi agente LLM.
-
-[![GitHub](https://img.shields.io/badge/patterns-15-blue)](https://github.com/AgtechDS/agent-patterns)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Patterns](https://img.shields.io/badge/patterns-16-green)]()
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
-## Stato
+> **Copy-paste patterns that turn any LLM agent into a specialist. No code. No setup. Just Markdown.**
 
-| Categoria | Pronti | Totale |
-|-----------|--------|--------|
-| Dev | 4 | 4 |
-| Knowledge | 3 | 3 |
-| Life | 5 | 5 |
-| Work | 2 | 2 |
-| Creative | 1 | 1 |
-| **Totale** | **15** | **15** |
+## Quick Start
 
-Ultimo aggiornamento SCHEMA: **Decision Journal v1.1** (meta-cognizione, modalità fallback).
+```bash
+# 1. Pick a pattern and copy its SCHEMA.md into your agent
+# 2. Run init
+# 3. Start using it
 
-## Cos'è
+# Example — Decision Journal:
+# Copy patterns/life/decision-journal/SCHEMA.md into your agent
+# Then:
+"dj init"              # Creates .decisions/
+"dj log Mi sono iscritto a un corso da €2000. Dubbio: vale la pena?"
+                      # Creates a structured decision entry
+"dj review"            # Shows all decisions, bias pattern, pending outcomes
+```
 
-Ogni pattern è un kit istantaneo: **README** (cosa fa, perché serve) + **SCHEMA.md** (prompt da copiare nell'agente) + **esempi** di wiki già popolato. Incolli lo SCHEMA, l'agente si specializza.
-
-I pattern nascono da un'idea chiave: il LLM gestisce il bookkeeping (aggiornare, collegare, ricordare, analizzare), l'umano fa ciò che sa fare meglio (decidere, creare, pensare).
-
-## Catalogo
+## Patterns
 
 ### Dev
-| Pattern | Cosa fa | Dolore |
-|---------|---------|--------|
-| [GitHub Gardener](patterns/dev/github-gardener/) | Manutenzione repo: issue, branch, PR, dipendenze | Repository che degenerano, issue dimenticate, branch morti |
-| [Debug Diary](patterns/dev/debug-diary/) | Diario strutturato di bug, fix e pattern ricorrenti | Risolvi lo stesso bug due volte perché hai dimenticato il fix |
-| [Dotfiles Curator](patterns/dev/dotfiles-curator/) | Analisi e documentazione di dotfile (zsh, git, nvim) | Config dimenticate, alias morti, tool mai usati |
-| [Server Sentinel](patterns/dev/server-sentinel/) | Monitoraggio, diagnostica e runbook per servizi | Server in down, log che nessuno legge, runbook inesistenti |
+| Pattern | Problema | Ops | Stato |
+|---------|----------|-----|-------|
+| 🧑‍🌾 GitHub Gardener | Repository che degenerano, issue dimenticate, branch morti | 6 | ✅ |
+| 🐛 Debug Diary | Risolvi lo stesso bug due volte perché hai dimenticato il fix | 5 | ✅ |
+| ⚙️ Dotfiles Curator | Config dimenticate, alias morti, tool mai usati | 5 | ✅ |
+| 🛡️ Server Sentinel | Server in down, log che nessuno legge, runbook inesistenti | 4 | ✅ |
 
 ### Knowledge
-| Pattern | Cosa fa | Dolore |
-|---------|---------|--------|
-| [LLM Wiki](patterns/knowledge/llm-wiki/) | Wiki persistente da fonti multiple (pattern Karpathy) | Conoscenza frammentata, mai composta, sempre re-derivata |
-| [Study Companion](patterns/knowledge/study-companion/) | Wiki di studio con spaced repetition e mappa concettuale | Studi e dimentichi l'80%, non colleghi i concetti |
-| [Reading Companion](patterns/knowledge/reading-companion/) | Wiki companion per libri, capitolo per capitolo | Libri letti e dimenticati, idee mai estratte |
+| Pattern | Problema | Ops | Stato |
+|---------|----------|-----|-------|
+| 🧠 LLM Wiki | Conoscenza frammentata, mai composta, sempre re-derivata | 5 | ✅ |
+| 📚 Study Companion | Studi e dimentichi l'80%, non colleghi i concetti | 7 | ✅ |
+| 📖 Reading Companion | Libri letti e dimenticati, idee mai estratte | 5 | ✅ |
 
 ### Life
-| Pattern | Cosa fa | Dolore |
-|---------|---------|--------|
-| [Decision Journal](patterns/life/decision-journal/) | Tracciamento decisioni, bias e risultati | Dimentichi perché hai deciso, ripeti gli stessi bias |
-| [Health Timeline](patterns/life/health-timeline/) | Storia medica centralizzata: referti, farmaci, trend | Info mediche sparse tra PDF, app e memoria |
-| [Personal CRM](patterns/life/personal-crm/) | Gestione relazioni: persone, interazioni, promesse | Perdi contatti, dimentichi compleanni e promesse |
-| [Life Admin](patterns/life/life-admin/) | Documenti, abbonamenti, scadenze e burocrazia | Passaporto scaduto, abbonamenti fantasma, scadenze sparse |
-| [Finance Narrator](patterns/life/finance-narrator/) | Racconto mensile delle finanze con trend e insight | Hai i dati ma nessuno ti racconta la storia dei tuoi soldi |
+| Pattern | Problema | Ops | Stato |
+|---------|----------|-----|-------|
+| 📓 Decision Journal | Dimentichi perché hai deciso, ripeti gli stessi bias | 5 | ✅ |
+| ❤️ Health Timeline | Info mediche sparse tra PDF, app e memoria | 5 | ✅ |
+| 🤝 Personal CRM | Perdi contatti, dimentichi compleanni e promesse | 5 | ✅ |
+| 📋 Life Admin | Passaporto scaduto, abbonamenti fantasma, scadenze sparse | 5 | ✅ |
+| 💰 Finance Narrator | Hai i dati ma nessuno ti racconta la storia dei tuoi soldi | 6 | ✅ |
 
 ### Work
-| Pattern | Cosa fa | Dolore |
-|---------|---------|--------|
-| [Meeting Memory](patterns/work/meeting-memory/) | Estrazione decisioni e task da meeting | 5 meeting al giorno, zero ricordo di chi ha deciso cosa |
-| [Project Postmortem](patterns/work/project-postmortem/) | Retrospettive strutturate con lezioni cross-progetto | Stessi errori su progetti diversi, lezioni perse |
+| Pattern | Problema | Ops | Stato |
+|---------|----------|-----|-------|
+| 🗣️ Meeting Memory | 5 meeting al giorno, zero ricordo di chi ha deciso cosa | 5 | ✅ |
+| 🔍 Project Postmortem | Stessi errori su progetti diversi, lezioni perse | 4 | ✅ |
 
 ### Creative
-| Pattern | Cosa fa | Dolore |
-|---------|---------|--------|
-| [World Bible](patterns/creative/world-bible/) | Wiki di mondi narrativi: personaggi, luoghi, timeline | Occhi blu nel cap.3 e marroni nel cap.12 |
+| Pattern | Problema | Ops | Stato |
+|---------|----------|-----|-------|
+| 🌍 World Bible | Occhi blu nel cap.3 e marroni nel cap.12 | 7 | ✅ |
 
-## Come si usa
-
-```
-1. Scegli un pattern dal catalogo
-2. Copia SCHEMA.md nel tuo agente (in una chat, in AGENTS.md, o in un file .md)
-3. Usa il comando di init del pattern (es. "dj init", "ht init", "crm init")
-4. Inizia a usare le operazioni: "dj log", "ht ingest", "crm update"
-```
-
-Tutti i pattern seguono la stessa architettura:
+## How It Works
 
 ```
-raw/              ← fonti, appunti, dati grezzi (li inserisci tu)
-wiki/             ← wiki gestito dal LLM (scrive tutto lui)
-  ├── index.md    ← catalogo/indice
-  ├── log.md      ← cronologia append-only
-  └── pages/      ← entità, concetti, decisioni, persone,...
-schema/           ← SCHEMA.md (il prompt, lo incolli una volta)
+  User                    Agent                     Workspace
+  ─────                   ─────                     ─────────
+  "st ingest" ──▶  ┌─────────────────┐  ──▶  .study/
+                   │  SCHEMA.md       │        ├── index.md
+  Appunti ──────▶  │  → Legge input   │  ──▶  ├── concepts/
+                   │  → Crea/aggiorna │        ├── gaps.md
+  "st quiz"  ──▶   │  → Collega       │  ──▶  └── review-queue.md
+                   │  → Restituisce   │
+                   └─────────────────┘
 ```
 
-## Struttura di un pattern
+You do the thinking. The agent does the bookkeeping. The workspace is your persistent second brain — pure Markdown, portable forever.
 
-```
-patterns/CATEGORIA/NOME/
-├── README.md          ← descrizione, problema, soluzione, comandi
-├── SCHEMA.md          ← prompt completo da incollare nell'agente
-└── examples/          ← wiki già popolato per capire subito
-```
+## Why It Works
 
-## Per chi
+- **Dolore reale** — ogni pattern nasce da un problema che incontri ogni settimana, non da un'astrazione teorica
+- **LLM fa il lavoro noioso** — aggiornare, collegare, ricordare, analizzare è ciò che gli agenti sanno fare meglio
+- **Artefatto persistente** — il wiki Markdown vive oltre la chat. Lo riapri, lo cerchi, lo versioni
+- **Zero codice, zero setup** — copi un file Markdown, scrivi `init`, e l'agente è specializzato
+- **Effetto composto** — dopo 10 decisioni tracciate, dopo 20 lezioni processate, il wiki è un asset che cresce da solo
 
-- **Sviluppatori** che usano agent AI (Claude Code, Codex, OpenCode) e vogliono template pronti
-- **Knowledge workers** che accumulano informazioni e vogliono un secondo cervello persistente
-- **Scrittori e creativi** che devono mantenere coerenza nei mondi narrativi
-- **Chiunque** abbia un problema di organizzazione che un LLM può risolvere
+## Contribute
 
-## Roadmap
+Hai un dolore ricorrente che un pattern LLM potrebbe risolvere? Apri una Issue o una PR.
 
-- [x] V1.0 — 15 pattern pubblicati, repo strutturata
-- [x] V1.1 — Decision Journal: meta-cognizione + modalità fallback
-- [ ] V1.2 — Health Timeline: upgrade meta-cognizione
-- [ ] V1.3 — Aggiunta `evals/` per test di regressione su ogni pattern
-- [ ] V1.4 — Guida per contribuire (`CONTRIBUTING.md`)
+→ [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Changelog
+## Philosophy
 
-| Versione | Data | Modifiche |
-|----------|------|-----------|
-| v1.1 | 2026-07-24 | Decision Journal: 3 campi meta-cognitivi (Tipo, Stato emotivo, Confidenza), modalità fallback, lint potenziato |
-| v1.0 | 2026-07-24 | Release iniziale: 15 pattern completi |
+**You do the thinking. The agent does the bookkeeping.** Ogni pattern toglie all'umano il carico della memoria e dell'organizzazione. Non è automazione — è leverage. L'agente non decide per te, non crea per te, non pensa per te. Ti libera la mente per farlo.
 
-## Licenza
+## Versioning
+
+`agent-patterns` follows [SemVer](https://semver.org/):
+
+| Change | Version bump |
+|--------|-------------|
+| New pattern added | `0.X.0` (minor) |
+| Fix/improvement to existing pattern | `0.X.Y` (patch) |
+| All patterns complete + examples | `1.0.0` (major) |
+
+## License
 
 MIT
